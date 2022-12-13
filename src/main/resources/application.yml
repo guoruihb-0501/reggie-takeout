@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: reggie_takeout
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/reggie?serverTimeZone=UTC&useSSL=false
+      username: root
+      password: mysql
+mybatis-plus:
+  global-config:
+    db-config:
+      #table-prefix: tbl_
+      id-type: ASSIGN_ID
+  configuration:
+    # 自动生成sql语句日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 在实体类映射表字段时 将下划线去掉，改成驼峰命名法，例如将表中的id_number对应成实体类的属性idNumber
+    map-underscore-to-camel-case: true
+reggie:
+  path: D:\images\
